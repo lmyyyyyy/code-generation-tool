@@ -42,7 +42,7 @@
             targetPackage     指定生成的model生成所在的包名
             targetProject     指定在该项目下所在的路径
         -->
-        <javaModelGenerator targetPackage="com.running.business.pojo"
+        <javaModelGenerator targetPackage="cn.code.chameleon.entity"
                             targetProject="generate">
 
             <!-- 是否允许子包，即targetPackage.schemaName.tableName -->
@@ -56,7 +56,7 @@
         </javaModelGenerator>
 
         <!--Mapper映射文件生成所在的目录 为每一个数据库的表生成对应的SqlMap文件 -->
-        <sqlMapGenerator targetPackage="running.business.mapper"
+        <sqlMapGenerator targetPackage="mybatis/mapper"
                          targetProject="generate">
             <property name="enableSubPackages" value="false"/>
         </sqlMapGenerator>
@@ -66,11 +66,37 @@
                 type="MIXEDMAPPER",生成基于注解的Java Model 和相应的Mapper对象
                 type="XMLMAPPER",生成SQLMap XML文件和独立的Mapper接口
         -->
-        <javaClientGenerator targetPackage="com.running.business.mapper"
+        <javaClientGenerator targetPackage="cn.code.chameleon.dao"
                              targetProject="generate" type="XMLMAPPER">
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>
+        <!--<table tableName="user" domainObjectName="User"></table>
+        <table tableName="room" domainObjectName="Room"></table>
+        <table tableName="unit" domainObjectName="Unit"></table>
+        <table tableName="floor" domainObjectName="Floor"></table>
+        <table tableName="community" domainObjectName="Community"></table>
+        <table tableName="street" domainObjectName="Street"></table>
+        <table tableName="property" domainObjectName="Property"></table>
+        <table tableName="worker" domainObjectName="Worker"></table>
+        <table tableName="foreign_person" domainObjectName="ForeignPerson"></table>
+        <table tableName="charge" domainObjectName="Charge"></table>
+        <table tableName="expenses" domainObjectName="Expenses"></table>
+        <table tableName="event" domainObjectName="Event"></table>
+        <table tableName="notice" domainObjectName="Notice"></table>
+        <table tableName="facility_info" domainObjectName="FacilityInfo"></table>
+        <table tableName="facility_maintain" domainObjectName="FacilityMaintain"></table>-->
 
-        <table tableName="run_deliveryuser" domainObjectName="RunDeliveryuser"></table>
+        <table tableName="chameleon_task" domainObjectName="ChameleonTask"></table>
+        <!--<table tableName="user_relation_role" domainObjectName="UserRelationRole"></table>
+        <table tableName="role" domainObjectName="Role"></table>
+        <table tableName="role_relation_function" domainObjectName="RoleRelationFunction"></table>
+        <table tableName="function" domainObjectName="Function"></table>
+        -->
+        <!--<table tableName="group" domainObjectName="Group"></table>
+        <table tableName="chameleon_task" domainObjectName="ChameleonTask"></table>
+        <table tableName="chameleon_template" domainObjectName="ChameleonTemplate"></table>
+        <table tableName="chameleon_statistics" domainObjectName="ChameleonStatistics"></table>-->
+        <!--<table tableName="service_log" domainObjectName="ServiceLog"></table>
+        <table tableName="mapper_log" domainObjectName="MapperLog"></table>-->
     </context>
 </generatorConfiguration>
